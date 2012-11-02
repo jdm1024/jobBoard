@@ -9,43 +9,67 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form runat="server">
-    <div class="page">
-        <div class="header">
-            <div class="title">
-                <h1>
-                    My ASP.NET Application
-                </h1>
-            </div>
-            <div class="loginDisplay">
-                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
-                    <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
-                    </AnonymousTemplate>
-                    <LoggedInTemplate>
-                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
-                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Log Out" LogoutPageUrl="~/"/> ]
-                    </LoggedInTemplate>
-                </asp:LoginView>
-            </div>
-            <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
-                    <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
-                    </Items>
-                </asp:Menu>
-            </div>
+    <div class = "outtermost_container">
+        <div class = "title_bar">
+            <h1>Title and image go up top</h1>
         </div>
-        <div class="main">
+        <div class = "menu_bar">
+            <ul class = "menu_list">
+                <li>
+                    <a href = "#">home</a>
+                </li>
+                <li>
+                    <a href = "#">users</a>
+                </li>
+                <li>
+                    <a href = "#">employers</a>
+                </li>
+                <li>
+                    <a href = "#">login</a>
+                </li>
+                <li>
+                    <a href = "#">etc.</a>
+                </li>
+            </ul>
+        </div>
+        <div class = "content_window">
             <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
         </div>
-        <div class="clear">
+        <div class = "footer_bar">
+            <ul class = "menu_list">
+                <li>
+                    <a href = "#">home</a>
+                </li>
+                <li>
+                    <a href = "#">users</a>
+                </li>
+                <li>
+                    <a href = "#">employers</a>
+                </li>
+                <li>
+                    <a href = "#">login</a>
+                </li>
+                <li>
+                    <a href = "#">etc.</a>
+                </li>
+                <br />
+                <li>
+                    <a href = "#">home</a>
+                </li>
+                <li>
+                    <a href = "#">users</a>
+                </li>
+                <li>
+                    <a href = "#">employers</a>
+                </li>
+                <li>
+                    <a href = "#">login</a>
+                </li>
+                <li>
+                    <a href = "#">etc.</a>
+                </li>
+            </ul>
         </div>
     </div>
-    <div class="footer">
-        
-    </div>
-    </form>
 </body>
 </html>

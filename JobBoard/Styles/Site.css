@@ -85,7 +85,14 @@ first child of the left and right table columns */
 
 /* PRIMARY LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
-
+.red_border
+{
+    outline: 1px solid red;
+}
+.green_border
+{
+    outline: 1px solid green;
+}
 .page
 {
     width: 960px;
@@ -292,3 +299,54 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+/*Messing around with new css defs*/
+.outtermost_container
+{
+    width: 960px;
+    min-height: 760px;
+    background: white;
+    margin: auto;
+}
+.title_bar
+{
+    outline: 1px solid red;
+    position:relative;
+    top: 5px;
+    width: 940px;
+    min-height: 55px;
+    text-align: center;
+    margin: auto;
+}
+.menu_bar
+{
+    outline: 1px solid red;
+    position:relative;
+    top: -3px;
+    width: 940px;
+    min-height: 55px;
+    text-align: center;
+    margin: auto;
+}
+.menu_list li
+{
+    position:relative;
+    left: -20px;
+    display: inline;
+}
+.content_window
+{
+    position:relative;
+    top: -3px;
+    outline: 1px solid red;
+    width: 940px;
+    min-height: 558px;
+    margin: auto;
+}
+.footer_bar
+{
+    outline: 1px solid red;
+    width: 940px;
+    margin: auto;
+}
+
