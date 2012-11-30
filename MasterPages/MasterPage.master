@@ -24,7 +24,8 @@
         </span>
         <span class="navigation_menu_item">Employers
         </span>
-        <span class="navigation_menu_item">Job Seekers
+        <span class="navigation_menu_item">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/JobSeeker.aspx">Job Seekers</asp:HyperLink>
         </span>
         <span class="navigation_menu_item">New Account
         </span>
