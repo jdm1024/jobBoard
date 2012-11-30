@@ -20,17 +20,31 @@
             </span>
         </div>
 
-        <span class="navigation_menu_item">Home
-        </span>
-        <span class="navigation_menu_item">Employers
-        </span>
-        <span class="navigation_menu_item">
-            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/JobSeeker.aspx">Job Seekers</asp:HyperLink>
-        </span>
-        <span class="navigation_menu_item">New Account
-        </span>
-        <span class="navigation_menu_item">Contact Us
-        </span>
+        <asp:HyperLink ID="mainHomeLink" runat="server" NavigateUrl="~/Default.aspx">
+            <span class="navigation_menu_item">
+                Home
+            </span>
+        </asp:HyperLink>
+        <asp:HyperLink ID="mainEmployersLink" runat="server" NavigateUrl="~/Default.aspx">
+            <span class="navigation_menu_item">
+                Employers
+            </span>
+        </asp:HyperLink>
+        <asp:HyperLink ID="mainSeekerLink" runat="server" NavigateUrl="~/JobSeeker.aspx">
+            <span class="navigation_menu_item">
+                Job Seekers
+            </span>
+        </asp:HyperLink>
+        <asp:HyperLink ID="mainAccountLink" runat="server" NavigateUrl="~/Default.aspx">
+            <span class="navigation_menu_item">
+                New Account
+            </span>
+        </asp:HyperLink>
+        <asp:HyperLink ID="mainContactLink" runat="server" NavigateUrl="~/Default.aspx">
+            <span class="navigation_menu_item">
+                Contact Us
+            </span>
+        </asp:HyperLink>
 
         <div class="content_pane">
             <form id="form1" runat="server">
@@ -41,26 +55,56 @@
         </div>
 
         <div class="footer">
-            <span class="left_footer_item">Home
-            </span>
-            <span class="left_footer_item">Employers
-            </span>
-            <span class="middle_footer_item">Job Seekers
-            </span>
-            <span class="right_footer_item">New Account
-            </span>
-            <span class="right_footer_item">Log In
-            </span>
-            <span class="left_footer_item">Contact Us
-            </span>
-            <span class="left_footer_item">Feedback
-            </span>
-            <span class="middle_footer_item">Help
-            </span>
-            <span class="right_footer_item">Terms and Conditions
-            </span>
-            <span class="right_footer_item">Privacy Policy
-            </span>
+            <asp:HyperLink ID="footerHomeLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="left_footer_item">
+                    Home
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerEmployersLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="left_footer_item">
+                    Employers
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerSeekersLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="middle_footer_item">
+                    Job Seekers
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerAccountLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="right_footer_item">
+                    New Account
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerLoginLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="right_footer_item">
+                    Log In
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerContactLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="left_footer_item">
+                    Contact Us
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerFeedbackLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="left_footer_item">
+                    Feedback
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerHelpLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="middle_footer_item">
+                    Help
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerTermsLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="right_footer_item">
+                    Terms and Conditions
+                </span>
+            </asp:HyperLink>
+            <asp:HyperLink ID="footerPrivacyLink" runat="server" NavigateUrl="~/Default.aspx">
+                <span class="right_footer_item">
+                    Privacy Policy
+                </span>
+            </asp:HyperLink>
         </div>
     </div>
 </body>

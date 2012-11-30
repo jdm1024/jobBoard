@@ -68,6 +68,7 @@ div.footer
 
 span.navigation_menu_item
 {
+    color: white;
     width: 179px;
     height: 47px;
     border: 1px solid #15194D;
@@ -79,6 +80,7 @@ span.navigation_menu_item
 
 span.left_footer_item
 {
+    color: white;
     width: 180px;
     height: 25px;
     line-height: 25px;
@@ -90,6 +92,7 @@ span.left_footer_item
 
 span.right_footer_item
 {
+    color: white;
     width: 180px;
     height: 25px;
     line-height: 25px;
@@ -101,6 +104,7 @@ span.right_footer_item
 
 span.middle_footer_item
 {
+    color: white;
     width: 180px;
     height: 25px;
     line-height: 25px;
