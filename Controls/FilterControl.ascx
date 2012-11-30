@@ -1,6 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="FilterControl.ascx.cs" Inherits="Controls_FilterControl" %>
 
-<script type="text/javascript" src="./Scripts/jquery-1.8.3.js"></script>
 <script type="text/javascript">
     /**
      * Assumes the base name of the list is the same as the base name of the title
