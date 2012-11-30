@@ -1,5 +1,0 @@
-c:\users\jdm108020\documents\visual studio 2010\Projects\JobBoard\JobBoard\bin\JobBoard.dll
-c:\users\jdm108020\documents\visual studio 2010\Projects\JobBoard\JobBoard\bin\JobBoard.pdb
-c:\users\jdm108020\documents\visual studio 2010\Projects\JobBoard\JobBoard\obj\Debug\ResolveAssemblyReference.cache
-c:\users\jdm108020\documents\visual studio 2010\Projects\JobBoard\JobBoard\obj\Debug\JobBoard.dll
-c:\users\jdm108020\documents\visual studio 2010\Projects\JobBoard\JobBoard\obj\Debug\JobBoard.pdb
