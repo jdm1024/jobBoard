@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPages_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>SE JobBoards</title>
+    <link href="~/Styles/master.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder id="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <span class="header_large_text">SE Board
+            </span>
+            <br />
+            <span class="header_small_text">Your job search starts here!
+            </span>
+        </div>
+
+        <span class="navigation_menu_item">Home
+        </span>
+        <span class="navigation_menu_item">Employers
+        </span>
+        <span class="navigation_menu_item">Job Seekers
+        </span>
+        <span class="navigation_menu_item">New Account
+        </span>
+        <span class="navigation_menu_item">Contact Us
+        </span>
+
+        <div class="content_pane">
+            <form id="form1" runat="server">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    This is the default content for the master page and should be replaced.
+                </asp:ContentPlaceHolder>
+            </form>
+        </div>
+
+        <div class="footer">
+            <span class="left_footer_item">Home
+            </span>
+            <span class="left_footer_item">Employers
+            </span>
+            <span class="middle_footer_item">Job Seekers
+            </span>
+            <span class="right_footer_item">New Account
+            </span>
+            <span class="right_footer_item">Log In
+            </span>
+            <span class="left_footer_item">Contact Us
+            </span>
+            <span class="left_footer_item">Feedback
+            </span>
+            <span class="middle_footer_item">Help
+            </span>
+            <span class="right_footer_item">Terms and Conditions
+            </span>
+            <span class="right_footer_item">Privacy Policy
+            </span>
+        </div>
+    </div>
+</body>
+</html>
