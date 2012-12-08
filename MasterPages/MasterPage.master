@@ -26,7 +26,7 @@
                 Home
             </span>
         </asp:HyperLink>
-        <asp:HyperLink ID="mainEmployersLink" runat="server" NavigateUrl="~/Default.aspx">
+        <asp:HyperLink ID="mainEmployersLink" runat="server" NavigateUrl="~/Employer.aspx">
             <span class="navigation_menu_item">
                 Employers
             </span>

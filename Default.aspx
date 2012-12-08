@@ -12,6 +12,7 @@
     </div>
     <div class="right_panel">
         <cs6301:FilterControl runat="server" id="FilterControl"/>
+        <a href="Default.aspx">Default.aspx</a>
     </div>
 </asp:Content>
 
