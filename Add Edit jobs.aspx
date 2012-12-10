@@ -11,17 +11,16 @@
                 JOB TITLE
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtJobtitle" runat="server"></asp:TextBox>
                 
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">
-                REQUIREMENTS
+                ROLES / RESPONSIBILITIES
             </asp:TableCell >
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
-                
+                <asp:TextBox id="txtResponsibilities" rows="2" width="150px" TextMode="MultiLine" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -29,17 +28,26 @@
                 HOW TO APPLY
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="DropDownList1" runat="server">
-                </asp:DropDownList>
-                
+                <asp:RadioButtonList id="rblHowToApply"  runat="server"  >
+                              <asp:ListItem Text="EMAIL" Value="0" Selected="true" />
+                              <asp:ListItem Text="Mail" Value="1" />
+                    </asp:RadioButtonList>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">
-               POSTING DURATION
+               EXPIRATION DATE
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>              
+                   <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">  
+    </asp:ToolkitScriptManager>  
+      
+    <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>  
+      
+    <asp:CalendarExtender   
+        ID="CalendarExtender1"   
+        TargetControlID="txtStartDate"   
+        runat="server" />             
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -47,7 +55,8 @@
                 LOCATION
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:DropDownList ID="ddlocation" runat="server">
+                   
                 </asp:DropDownList>
                 
             </asp:TableCell>
@@ -57,9 +66,9 @@
                 KEYWORDS
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:DropDownList ID="ddKeywords" runat="server">
+                   
                 </asp:DropDownList>
-               
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -67,10 +76,10 @@
                 JOB TYPE
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:RadioButtonList id="category"  runat="server"  >
-                              <asp:ListItem Text="Full Time" Value="0" Selected="true" />
-                              <asp:ListItem Text="Part Time" Value="1" />
-                </asp:RadioButtonList>
+                <asp:DropDownList ID="ddJobtype" runat="server">
+                   
+                </asp:DropDownList>
+                
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
@@ -78,21 +87,21 @@
                 JOB DESCRIPTION
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <textarea id="TextArea1" rows="2" cols="20"></textarea>
+                <asp:TextBox id="txtJobDescription" rows="2" width="150px" TextMode="MultiLine" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow >
             <asp:TableCell HorizontalAlign="Left">
-                <input id="Submit1" type="submit" value="submit" />
+                <asp:Button  id="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click"/>
             </asp:TableCell>
             </asp:TableRow>
     </asp:Table>
 
 </div>
 <div class="right_panel">
-        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Add Edit jobs.aspx">ADD / EDIT JOB POSTINGS</asp:HyperLink>
+        <asp:HyperLink ID="hlAddjobs" runat="server" NavigateUrl="~/Add Edit jobs.aspx">ADD / EDIT JOB POSTINGS</asp:HyperLink>
         
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/view my jobs.aspx">VIEW MY JOB POSTINGS</asp:HyperLink>
+        <asp:HyperLink ID="hlViewjobs" runat="server" NavigateUrl="~/view my jobs.aspx">VIEW MY JOB POSTINGS</asp:HyperLink>
         
         <hr />
         <asp:GridView ID="GridView1" runat="server"></asp:GridView>
