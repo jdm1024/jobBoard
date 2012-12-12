@@ -71,7 +71,7 @@
             - Programming Languages
         </div>
         <span class="filter_option_list" id="languages_list">
-            <asp:CheckBoxList ID="keywordCheckboxList" runat="server" DataSourceID="keywordDataSource" DataTextField="keyword" DataValueField="keyword" AutoPostBack="True" BorderStyle="None">
+            <asp:CheckBoxList ID="keywordCheckboxList" runat="server" DataSourceID="keywordDataSource" DataTextField="keyword" DataValueField="keyword" AutoPostBack="True" BorderStyle="None" OnDataBound="checkAllBoxes">
             </asp:CheckBoxList>
             <asp:SqlDataSource ID="keywordDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [keyword] FROM [Keywords]"></asp:SqlDataSource>
         </span>
@@ -94,7 +94,7 @@
             - Job Type
         </div>
         <span class="filter_option_list" id="job_type_list">
-            <asp:CheckBoxList ID="jobTypeCheckboxList" runat="server" DataSourceID="jobTypeDataSource" DataTextField="jobType" DataValueField="jobType" AutoPostBack="True" BorderStyle="None">
+            <asp:CheckBoxList ID="jobTypeCheckboxList" runat="server" DataSourceID="jobTypeDataSource" DataTextField="jobType" DataValueField="jobType" AutoPostBack="True" BorderStyle="None" OnDataBound="checkAllBoxes">
             </asp:CheckBoxList>
             <asp:SqlDataSource ID="jobTypeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [jobType] FROM [JobType]"></asp:SqlDataSource>
         </span>
@@ -104,7 +104,7 @@
             - Location
         </div>
         <span class="filter_option_list" id="location_list">
-            <asp:CheckBoxList ID="locationCheckboxList" runat="server" DataSourceID="locationDataSource" DataTextField="longName" DataValueField="longName" AutoPostBack="True" BorderStyle="None">
+            <asp:CheckBoxList ID="locationCheckboxList" runat="server" DataSourceID="locationDataSource" DataTextField="longName" DataValueField="longName" AutoPostBack="True" BorderStyle="None" OnDataBound="checkAllBoxes">
             </asp:CheckBoxList>
             <asp:SqlDataSource ID="locationDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [longName] FROM [States]"></asp:SqlDataSource>
         </span>
