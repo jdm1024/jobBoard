@@ -1,111 +1,33 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="FilterControl.ascx.cs" Inherits="Controls_FilterControl" %>
 
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Jobs.description, Jobs.title, Jobs.responsibilities, Jobs.canApplyOnline, Jobs.expirationDate, States.longName, Jobs.jobType FROM Jobs INNER JOIN States ON Jobs.stateId = States.Id"></asp:SqlDataSource>
-<asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
-    <AlternatingItemTemplate>
-        <span style="">description:
-        <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
-        <br />
-        title:
-        <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
-        <br />
-        responsibilities:
-        <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
-        <br />
-        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
-        <br />
-        expirationDate:
-        <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
-        <br />
-        longName:
-        <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
-        <br />
-        jobType:
-        <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
-        <br />
-        <br />
-        </span>
-    </AlternatingItemTemplate>
-    <EditItemTemplate>
-        <span style="">description:
-        <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%# Bind("description") %>' />
-        <br />
-        title:
-        <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
-        <br />
-        responsibilities:
-        <asp:TextBox ID="responsibilitiesTextBox" runat="server" Text='<%# Bind("responsibilities") %>' />
-        <br />
-        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Bind("canApplyOnline") %>' Text="canApplyOnline" />
-        <br />
-        expirationDate:
-        <asp:TextBox ID="expirationDateTextBox" runat="server" Text='<%# Bind("expirationDate") %>' />
-        <br />
-        longName:
-        <asp:TextBox ID="longNameTextBox" runat="server" Text='<%# Bind("longName") %>' />
-        <br />
-        jobType:
-        <asp:TextBox ID="jobTypeTextBox" runat="server" Text='<%# Bind("jobType") %>' />
-        <br />
-        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-        <br />
-        <br />
-        </span>
-    </EditItemTemplate>
+<asp:ListView ID="jobsListView" runat="server" DataSourceID="SqlDataSource1">
     <EmptyDataTemplate>
-        <span>No data was returned.</span>
+        <span>No jobs were found in the database.</span>
     </EmptyDataTemplate>
-    <InsertItemTemplate>
-        <span style="">description:
-        <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%# Bind("description") %>' />
-        <br />
-        title:
-        <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
-        <br />
-        responsibilities:
-        <asp:TextBox ID="responsibilitiesTextBox" runat="server" Text='<%# Bind("responsibilities") %>' />
-        <br />
-        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Bind("canApplyOnline") %>' Text="canApplyOnline" />
-        <br />
-        expirationDate:
-        <asp:TextBox ID="expirationDateTextBox" runat="server" Text='<%# Bind("expirationDate") %>' />
-        <br />
-        longName:
-        <asp:TextBox ID="longNameTextBox" runat="server" Text='<%# Bind("longName") %>' />
-        <br />
-        jobType:
-        <asp:TextBox ID="jobTypeTextBox" runat="server" Text='<%# Bind("jobType") %>' />
-        <br />
-        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-        <br />
-        <br />
-        </span>
-    </InsertItemTemplate>
     <ItemTemplate>
-        <span style="">description:
-        <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
-        <br />
-        title:
-        <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
-        <br />
-        responsibilities:
-        <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
-        <br />
-        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
-        <br />
-        expirationDate:
-        <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
-        <br />
-        longName:
-        <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
-        <br />
-        jobType:
-        <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
-        <br />
-        <br />
-        </span>
+        <div class="job_item">
+            <asp:Label ID="Label1" runat="server" Text="Description:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Job Title:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Responsibilities:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
+            <br />
+            <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
+            <br />
+            <asp:Label ID="Label4" runat="server" Text="Post expires:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
+            <br />
+            <asp:Label ID="Label5" runat="server" Text="State:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
+            <br />
+            <asp:Label ID="Label6" runat="server" Text="jobType:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
+            <br />
+        </div>
     </ItemTemplate>
     <LayoutTemplate>
         <div id="itemPlaceholderContainer" runat="server" style="">

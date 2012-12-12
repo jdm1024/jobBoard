@@ -179,4 +179,20 @@ div.left_panel
 a:visited
 {
     color:white;
-} 
+}
+
+div.job_item
+{
+    border: 1px solid gray;
+    width: 95%;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.job_item_label
+{
+    display: inline-block;
+    width: 120px;
+}
