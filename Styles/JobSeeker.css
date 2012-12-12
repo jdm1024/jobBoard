@@ -1,0 +1,27 @@
+﻿body {
+}
+.infoHeader {
+text-align:left;
+font-size:20px;
+font-style:normal;
+}
+
+.TableCell {
+text-align:left;
+font-size:16px;
+font-style:normal;
+}
+
+.buttonClass {
+   
+width:60px;
+font: bold;
+}
+
+.myListBox
+{
+border:double;
+font-size:12px;
+font-style:normal;    
+width:150px;
+}
