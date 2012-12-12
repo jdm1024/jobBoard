@@ -196,3 +196,10 @@ div.job_item
     display: inline-block;
     width: 120px;
 }
+
+span.darker_background
+{
+    width: 100%;
+    display: inline-block;
+    background: #2C317A;
+}
