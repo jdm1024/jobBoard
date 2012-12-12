@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="FilterControl.ascx.cs" Inherits="Controls_FilterControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JobListControl.ascx.cs" Inherits="Controls_FilterControl" %>
 
 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Jobs.description, Jobs.title, Jobs.responsibilities, Jobs.canApplyOnline, Jobs.expirationDate, States.longName, Jobs.jobType FROM Jobs INNER JOIN States ON Jobs.stateId = States.Id"></asp:SqlDataSource>
 <asp:ListView ID="jobsListView" runat="server" DataSourceID="SqlDataSource1">

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPages/MasterPage.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<%@ Register Src="~/Controls/FilterControl.ascx" TagPrefix="cs6301" TagName="FilterControl" %>
+<%@ Register Src="~/Controls/JobListControl.ascx" TagPrefix="cs6301" TagName="FilterControl" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script type="text/javascript">
