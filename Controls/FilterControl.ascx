@@ -1,75 +1,150 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="FilterControl.ascx.cs" Inherits="Controls_FilterControl" %>
 
-<script type="text/javascript">
-    /**
-     * Assumes the base name of the list is the same as the base name of the title
-     */
-    function animateListTransition() {
-        var list_element = document.getElementById(this.id.replace("title", "list"));
-        var slideSetting = $(list_element).attr("slide");
-        var currentText = $(this).text();
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Jobs.description, Jobs.title, Jobs.responsibilities, Jobs.canApplyOnline, Jobs.expirationDate, States.longName, Jobs.jobType FROM Jobs INNER JOIN States ON Jobs.stateId = States.Id"></asp:SqlDataSource>
+<asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1">
+    <AlternatingItemTemplate>
+        <span style="">description:
+        <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+        <br />
+        title:
+        <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
+        <br />
+        responsibilities:
+        <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
+        <br />
+        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
+        <br />
+        expirationDate:
+        <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
+        <br />
+        longName:
+        <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
+        <br />
+        jobType:
+        <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
+        <br />
+        <br />
+        </span>
+    </AlternatingItemTemplate>
+    <EditItemTemplate>
+        <span style="">description:
+        <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%# Bind("description") %>' />
+        <br />
+        title:
+        <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
+        <br />
+        responsibilities:
+        <asp:TextBox ID="responsibilitiesTextBox" runat="server" Text='<%# Bind("responsibilities") %>' />
+        <br />
+        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Bind("canApplyOnline") %>' Text="canApplyOnline" />
+        <br />
+        expirationDate:
+        <asp:TextBox ID="expirationDateTextBox" runat="server" Text='<%# Bind("expirationDate") %>' />
+        <br />
+        longName:
+        <asp:TextBox ID="longNameTextBox" runat="server" Text='<%# Bind("longName") %>' />
+        <br />
+        jobType:
+        <asp:TextBox ID="jobTypeTextBox" runat="server" Text='<%# Bind("jobType") %>' />
+        <br />
+        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+        <br />
+        <br />
+        </span>
+    </EditItemTemplate>
+    <EmptyDataTemplate>
+        <span>No data was returned.</span>
+    </EmptyDataTemplate>
+    <InsertItemTemplate>
+        <span style="">description:
+        <asp:TextBox ID="descriptionTextBox" runat="server" Text='<%# Bind("description") %>' />
+        <br />
+        title:
+        <asp:TextBox ID="titleTextBox" runat="server" Text='<%# Bind("title") %>' />
+        <br />
+        responsibilities:
+        <asp:TextBox ID="responsibilitiesTextBox" runat="server" Text='<%# Bind("responsibilities") %>' />
+        <br />
+        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Bind("canApplyOnline") %>' Text="canApplyOnline" />
+        <br />
+        expirationDate:
+        <asp:TextBox ID="expirationDateTextBox" runat="server" Text='<%# Bind("expirationDate") %>' />
+        <br />
+        longName:
+        <asp:TextBox ID="longNameTextBox" runat="server" Text='<%# Bind("longName") %>' />
+        <br />
+        jobType:
+        <asp:TextBox ID="jobTypeTextBox" runat="server" Text='<%# Bind("jobType") %>' />
+        <br />
+        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+        <br />
+        <br />
+        </span>
+    </InsertItemTemplate>
+    <ItemTemplate>
+        <span style="">description:
+        <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+        <br />
+        title:
+        <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
+        <br />
+        responsibilities:
+        <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
+        <br />
+        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
+        <br />
+        expirationDate:
+        <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
+        <br />
+        longName:
+        <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
+        <br />
+        jobType:
+        <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
+        <br />
+        <br />
+        </span>
+    </ItemTemplate>
+    <LayoutTemplate>
+        <div id="itemPlaceholderContainer" runat="server" style="">
+            <span runat="server" id="itemPlaceholder" />
+        </div>
+        <div style="">
+            <asp:DataPager ID="DataPager1" runat="server">
+                <Fields>
+                    <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                    <asp:NumericPagerField />
+                    <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
+                </Fields>
+            </asp:DataPager>
+        </div>
+    </LayoutTemplate>
+    <SelectedItemTemplate>
+        <span style="">description:
+        <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
+        <br />
+        title:
+        <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
+        <br />
+        responsibilities:
+        <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
+        <br />
+        <asp:CheckBox ID="canApplyOnlineCheckBox" runat="server" Checked='<%# Eval("canApplyOnline") %>' Enabled="false" Text="canApplyOnline" />
+        <br />
+        expirationDate:
+        <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
+        <br />
+        longName:
+        <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("longName") %>' />
+        <br />
+        jobType:
+        <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
+        <br />
+        <br />
+        </span>
+    </SelectedItemTemplate>
+</asp:ListView>
 
-        if (slideSetting == null) {
-            $(list_element).slideUp();
-            $(list_element).attr("slide", "down");
-            $(this).text(currentText.replace("-", "+"));
-            if ($(list_element).hasClass("hidden")) {
-                $(list_element).removeAtr("class");
-            }
-        } else {
-            $(list_element).slideDown();
-            $(list_element).removeAttr("slide");
-            $(this).text(currentText.replace("+", "-"));
-        }
-    }
-    $(document).ready(function () {
-        $("#languages_title").click(animateListTransition);
-        $("#employers_title").click(animateListTransition);
-        $("#job_type_title").click(animateListTransition);
-        $("#location_title").click(animateListTransition);
-    }
-    );
-</script>
 
-<div class="filter_control_heading">
-    Filter Options
-</div>
-<div class="keyword_category_title" id="languages_title">
-    - Programming Languages
-</div>
-<span class="filter_option_list" id="languages_list">
-    <input type="checkbox" checked="checked">Java<br/>
-    <input type="checkbox" checked="checked">PHP<br/>
-    <input type="checkbox" checked="checked">C<br/>
-    <input type="checkbox" checked="checked">C++<br/>
-    <input type="checkbox" checked="checked">Fortan<br/>
-    <input type="checkbox" checked="checked">Cobol<br/>
-    <input type="checkbox" checked="checked">C#<br/>
-</span>
-<div class="keyword_category_title" id="employers_title">
-    + Employers
-</div>
-<span class="filter_option_list hidden" id="employers_list" slide="down">
-    <input type="checkbox" checked="checked">Bob's Burgers<br/>
-    <input type="checkbox" checked="checked">Earl's Emporium<br/>
-    <input type="checkbox" checked="checked">Flashy Bang Stuff!<br/>
-    <input type="checkbox" checked="checked">West End Superstore<br/>
-    <input type="checkbox" checked="checked">That Place We All Love<br/>
-    <input type="checkbox" checked="checked">A Cornerstore<br/>
-</span>
-<div class="keyword_category_title" id="job_type_title">
-    + Job Type
-</div>
-<span class="filter_option_list hidden" id="job_type_list" slide="down">
-    <input type="checkbox" checked="checked">Full Time<br/>
-    <input type="checkbox" checked="checked">Part Time<br/>
-    <input type="checkbox" checked="checked">Internship<br/>
-</span>
-<div class="keyword_category_title" id="location_title">
-    + Location
-</div>
-<span class="filter_option_list hidden" id="location_list" slide="down">
-    <input type="checkbox" checked="checked">Dallas<br/>
-    <input type="checkbox" checked="checked">Houston<br/>
-    <input type="checkbox" checked="checked">San Antonio<br/>
-</span>
