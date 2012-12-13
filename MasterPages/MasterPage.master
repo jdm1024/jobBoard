@@ -36,9 +36,9 @@
                 Job Seekers
             </span>
         </asp:HyperLink>
-        <asp:HyperLink ID="mainAccountLink" runat="server" NavigateUrl="~/Default.aspx">
+        <asp:HyperLink ID="mainAccountLink" runat="server" NavigateUrl="~/Login.aspx">
             <span class="navigation_menu_item">
-                New Account
+                Log In
             </span>
         </asp:HyperLink>
         <asp:HyperLink ID="mainContactLink" runat="server" NavigateUrl="~/Default.aspx">
