@@ -203,3 +203,24 @@ span.darker_background
     display: inline-block;
     background: #2C317A;
 }
+
+input.job_item_link
+{
+    color: white;
+    background-color: #363C96;
+}
+
+input.job_item_link:hover
+{
+    background-color: #15194D;
+    color: #FFFD8C;
+    cursor: pointer;
+}
+
+div.job_item_link_area
+{
+    width: 100%;
+    margin-top: 6px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}

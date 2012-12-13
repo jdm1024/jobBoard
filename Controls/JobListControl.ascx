@@ -30,8 +30,9 @@
             <asp:Label ID="Label6" runat="server" Text="Job Type:" CssClass="job_item_label"></asp:Label>
             <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
             <br />
-            <asp:LinkButton ID="viewJobLinkButton" runat="server" CausesValidation="False" PostBackUrl='<%#"~/Add Edit jobs.aspx?jobId="+Eval("jobId")%>'>View Job</asp:LinkButton>
-            <br />
+            <div class="job_item_link_area">
+                <asp:Button ID="viewJobButton" runat="server" Text="View Job"  CausesValidation="False" PostBackUrl='<%#"~/Add Edit jobs.aspx?jobId="+Eval("jobId")%>' CssClass="job_item_link" />
+            </div>
         </div>
     </ItemTemplate>
     <LayoutTemplate>
