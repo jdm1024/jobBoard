@@ -63,7 +63,7 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
         MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         MyCommand = new SqlCommand();
-        MyCommand.CommandText = "SELECT Id, KEYWORD  FROM KEYWORDS";
+        MyCommand.CommandText = "SELECT * FROM Skills";
         MyCommand.CommandType = CommandType.Text;
         MyCommand.Connection = MyConnection;
 
@@ -73,8 +73,8 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
         MyAdapter.Fill(MyTable);
 
         ddKeywords.DataSource = MyTable.DefaultView;
-        ddKeywords.DataValueField = "Id";
-        ddKeywords.DataTextField = "KEYWORD";
+        ddKeywords.DataValueField = "SkillsId";
+        ddKeywords.DataTextField = "name";
         ddKeywords.DataBind();
 
         MyCommand.CommandText = "SELECT Id, LONGNAME  FROM STATES";
