@@ -38,18 +38,42 @@ public partial class _Default : System.Web.UI.Page
     protected void generateListFilter()
     {
         var updatedFilter = " WHERE ";
-        var isUsingFilter = false;
+        var hasSetFilter = false;
         //Exclude the locations which are unchecked
         for (int i = 0; i < locationCheckboxList.Items.Count; i++)
         {
             if (locationCheckboxList.Items[i].Selected == false)
             {
-                isUsingFilter = true;
-                updatedFilter += "States.longName != '" + locationCheckboxList.Items[i].Text + "'";
+                if (!hasSetFilter)
+                {
+                    hasSetFilter = true;
+                    updatedFilter += "States.longName != '" + locationCheckboxList.Items[i].Text + "'";
+                }
+                else
+                {
+                    updatedFilter += " AND States.longName != '" + locationCheckboxList.Items[i].Text + "'";
+                }
             }
         }
 
-        if (isUsingFilter)
+        //Exclude the job types which are unchecked
+        for (int i = 0; i < jobTypeCheckboxList.Items.Count; i++)
+        {
+            if (jobTypeCheckboxList.Items[i].Selected == false)
+            {
+                if (!hasSetFilter)
+                {
+                    hasSetFilter = true;
+                    updatedFilter += "JobType.jobType != '" + jobTypeCheckboxList.Items[i].Text + "'";
+                }
+                else
+                {
+                    updatedFilter += " AND JobType.jobType != '" + jobTypeCheckboxList.Items[i].Text + "'";
+                }
+            }
+        }
+
+        if (hasSetFilter)
         {
             jobListControl.whereClause = updatedFilter;
         }
