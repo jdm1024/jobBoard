@@ -30,4 +30,6 @@ public partial class Controls_FilterControl : System.Web.UI.UserControl
     }
 
     public string whereClause { get; set; }
+
+    public SqlDataSource controlDataSource { get; set; }
 }

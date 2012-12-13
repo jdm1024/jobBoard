@@ -73,7 +73,11 @@
         <span class="filter_option_list" id="languages_list">
             <asp:CheckBoxList ID="keywordCheckboxList" runat="server" DataSourceID="keywordDataSource" DataTextField="name" DataValueField="name" AutoPostBack="True" BorderStyle="None" OnDataBound="checkAllBoxes">
             </asp:CheckBoxList>
-            <asp:SqlDataSource ID="keywordDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [name] FROM [Skills]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="keywordDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [name] FROM [Skills] WHERE ([type] = @type)">
+                <SelectParameters>
+                    <asp:Parameter DefaultValue="L" Name="type" Type="String" />
+                </SelectParameters>
+        </asp:SqlDataSource>
         </span>
 
         <asp:HiddenField ID="isEmployersHiddenField" runat="server" ViewStateMode="Enabled" Value="true" />
