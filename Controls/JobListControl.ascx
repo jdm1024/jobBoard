@@ -3,7 +3,7 @@
 <asp:SqlDataSource ID="jobListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"></asp:SqlDataSource>
 <asp:ListView ID="jobsListView" runat="server" DataSourceID="jobListDataSource">
     <EmptyDataTemplate>
-        <span>No jobs were found in the database.</span>
+        <span>No matching jobs were found in the database.</span>
     </EmptyDataTemplate>
     <ItemTemplate>
         <div class="job_item">
@@ -37,7 +37,7 @@
             <span runat="server" id="itemPlaceholder" />
         </div>
         <div style="">
-            <asp:DataPager ID="DataPager1" runat="server">
+            <asp:DataPager ID="DataPager1" runat="server" PageSize="3">
                 <Fields>
                     <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False" />
                     <asp:NumericPagerField />

@@ -176,7 +176,7 @@ div.left_panel
     margin: 0px;
 }
 
-a:visited
+a:visited, a:link
 {
     color:white;
 }
