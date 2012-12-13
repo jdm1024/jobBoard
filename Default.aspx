@@ -60,7 +60,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div class="left_panel">
-        <cs6301:FilterControl runat="server" id="FilterControl"/>
+        <cs6301:FilterControl runat="server" id="jobListControl"/>
     </div>
     <div class="right_panel">
         <div class="filter_control_heading">

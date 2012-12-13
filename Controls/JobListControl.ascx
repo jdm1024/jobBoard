@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="JobListControl.ascx.cs" Inherits="Controls_FilterControl" %>
 
-<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT Jobs.description, Jobs.title, Jobs.responsibilities, Jobs.expirationDate, States.longName AS state, JobType.jobType, ApplicationMethod.description AS applyDetails FROM Jobs INNER JOIN States ON Jobs.stateId = States.Id INNER JOIN JobType ON Jobs.jobType = JobType.Id INNER JOIN ApplicationMethod ON Jobs.applicationMethodId = ApplicationMethod.Id"></asp:SqlDataSource>
-<asp:ListView ID="jobsListView" runat="server" DataSourceID="SqlDataSource1">
+<asp:SqlDataSource ID="jobListDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"></asp:SqlDataSource>
+<asp:ListView ID="jobsListView" runat="server" DataSourceID="jobListDataSource">
     <EmptyDataTemplate>
         <span>No jobs were found in the database.</span>
     </EmptyDataTemplate>
