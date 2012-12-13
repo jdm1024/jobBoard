@@ -12,9 +12,6 @@
             <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
             </span>
             <br />
-            <asp:Label ID="Label1" runat="server" Text="Description:" CssClass="job_item_label"></asp:Label>
-            <asp:Label ID="descriptionLabel" runat="server" Text='<%# Eval("description") %>' />
-            <br />
             <asp:Label ID="Label3" runat="server" Text="Responsibilities:" CssClass="job_item_label"></asp:Label>
             <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
             <br />
