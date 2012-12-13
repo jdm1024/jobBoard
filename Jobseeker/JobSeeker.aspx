@@ -11,8 +11,8 @@
          <asp:Table ID="Table0" runat="server">
 
               <asp:TableRow>
+                  
                    <asp:TableCell >
-                       
        <asp:HiddenField ID="userId"  Value="99" runat="server" />
 		<asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0" >
               
