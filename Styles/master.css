@@ -224,3 +224,15 @@ div.job_item_link_area
     margin-bottom: 0px;
     margin-left: 0px;
 }
+
+
+a {
+color:white;
+text-decoration:none;
+}
+
+a:visited
+{
+    color:white;
+    text-decoration:none;
+}

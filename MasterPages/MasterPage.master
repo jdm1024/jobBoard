@@ -26,12 +26,12 @@
                 Home
             </span>
         </asp:HyperLink>
-        <asp:HyperLink ID="mainEmployersLink" runat="server" NavigateUrl="~/Employer.aspx">
+        <asp:HyperLink ID="mainEmployersLink" runat="server" NavigateUrl="~/EmployerPage/Employer.aspx">
             <span class="navigation_menu_item">
                 Employers
             </span>
         </asp:HyperLink>
-        <asp:HyperLink ID="mainSeekerLink" runat="server" NavigateUrl="~/JobSeeker.aspx">
+        <asp:HyperLink ID="mainSeekerLink" runat="server" NavigateUrl="~/Jobseeker/JobSeeker.aspx">
             <span class="navigation_menu_item">
                 Job Seekers
             </span>

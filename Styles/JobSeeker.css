@@ -25,3 +25,12 @@ font-size:12px;
 font-style:normal;    
 width:150px;
 }
+
+.error {
+    font-size:14px;
+    color:red;
+    text-align:left;
+}
+a:visited {
+    color:white;
+}
