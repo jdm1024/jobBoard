@@ -21,7 +21,8 @@ public partial class Controls_FilterControl : System.Web.UI.UserControl
 
             "FROM Jobs INNER JOIN States ON Jobs.stateId = States.Id " +
             "INNER JOIN JobType ON Jobs.jobType = JobType.Id " +
-            "INNER JOIN ApplicationMethod ON Jobs.applicationMethodId = ApplicationMethod.Id";
+            "INNER JOIN ApplicationMethod ON Jobs.applicationMethodId = ApplicationMethod.Id " +
+            "INNER JOIN Employer ON Jobs.employerId = Employer.Id";
         if (whereClause != null && whereClause.Length > 0)
         {
             jobListDataSource.SelectCommand += whereClause;
@@ -30,6 +31,4 @@ public partial class Controls_FilterControl : System.Web.UI.UserControl
     }
 
     public string whereClause { get; set; }
-
-    public SqlDataSource controlDataSource { get; set; }
 }

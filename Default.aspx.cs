@@ -73,6 +73,40 @@ public partial class _Default : System.Web.UI.Page
             }
         }
 
+        //Exclude the unchecked employers
+        for (int i = 0; i < employersCheckboxList.Items.Count; i++)
+        {
+            if (employersCheckboxList.Items[i].Selected == false)
+            {
+                if (!hasSetFilter)
+                {
+                    hasSetFilter = true;
+                    updatedFilter += "Employer.companyName != '" + employersCheckboxList.Items[i].Text + "'";
+                }
+                else
+                {
+                    updatedFilter += " AND Employer.companyName != '" + employersCheckboxList.Items[i].Text + "'";
+                }
+            }
+        }
+
+        //Exclude the unchecked skills
+        for (int i = 0; i < keywordCheckboxList.Items.Count; i++)
+        {
+            if (keywordCheckboxList.Items[i].Selected == false)
+            {
+                if (!hasSetFilter)
+                {
+                    hasSetFilter = true;
+                    updatedFilter += "Jobs.Id NOT IN (SELECT JobId FROM Jobs_Skills WHERE Jobs_Skills.skillsId = (SELECT SkillsId from Skills where name = '" + keywordCheckboxList.Items[i].Text + "'))";
+                }
+                else
+                {
+                    updatedFilter += " AND Jobs.Id NOT IN (SELECT JobId FROM Jobs_Skills WHERE Jobs_Skills.skillsId = (SELECT SkillsId from Skills where name = '" + keywordCheckboxList.Items[i].Text + "'))";
+                }
+            }
+        }
+
         if (hasSetFilter)
         {
             jobListControl.whereClause = updatedFilter;

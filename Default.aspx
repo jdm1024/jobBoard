@@ -77,7 +77,7 @@
                 <SelectParameters>
                     <asp:Parameter DefaultValue="L" Name="type" Type="String" />
                 </SelectParameters>
-        </asp:SqlDataSource>
+            </asp:SqlDataSource>
         </span>
 
         <asp:HiddenField ID="isEmployersHiddenField" runat="server" ViewStateMode="Enabled" Value="true" />
@@ -85,12 +85,9 @@
             - Employers
         </div>
         <span class="filter_option_list" id="employers_list">
-            <input type="checkbox" checked="checked">Bob's Burgers<br/>
-            <input type="checkbox" checked="checked">Earl's Emporium<br/>
-            <input type="checkbox" checked="checked">Flashy Bang Stuff!<br/>
-            <input type="checkbox" checked="checked">West End Superstore<br/>
-            <input type="checkbox" checked="checked">That Place We All Love<br/>
-            <input type="checkbox" checked="checked">A Cornerstore<br/>
+            <asp:CheckBoxList ID="employersCheckboxList" runat="server" AutoPostBack="True" DataSourceID="employersCheckboxListSqlDataSource" DataTextField="companyName" DataValueField="companyName" OnDataBound="checkAllBoxes">
+            </asp:CheckBoxList>
+            <asp:SqlDataSource ID="employersCheckboxListSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Employer]"></asp:SqlDataSource>
         </span>
         
         <asp:HiddenField ID="isJobTypeHiddenField" runat="server" ViewStateMode="Enabled" Value="true" />
