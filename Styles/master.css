@@ -178,11 +178,6 @@ div.left_panel
     overflow-x: hidden;
 }
 
-a:visited, a:link
-{
-    color:white;
-}
-
 div.job_item
 {
     border: 1px solid gray;
@@ -227,14 +222,24 @@ div.job_item_link_area
     margin-left: 0px;
 }
 
-
 a {
 color:white;
 text-decoration:none;
 }
 
-a:visited
+a.underline 
 {
-    color:white;
-    text-decoration:none;
+    text-decoration: underline;
+}
+
+a:hover 
+{
+    color: #FFFD8C;
+}
+
+div.about_us_pages 
+{
+    text-align: left;
+    padding-left:10px;
+    padding-right:10px
 }

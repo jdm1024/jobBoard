@@ -41,7 +41,7 @@
                 Log In
             </span>
         </asp:HyperLink>
-        <asp:HyperLink ID="mainContactLink" runat="server" NavigateUrl="~/Default.aspx">
+        <asp:HyperLink ID="mainContactLink" runat="server" NavigateUrl="~/AboutUs/AboutUs.aspx">
             <span class="navigation_menu_item">
                 Contact Us
             </span>
@@ -81,27 +81,27 @@
                     Log In
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerContactLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerContactLink" runat="server" NavigateUrl="~/AboutUs/AboutUs.aspx">
                 <span class="left_footer_item">
                     Contact Us
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerFeedbackLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerFeedbackLink" runat="server" NavigateUrl="~/AboutUs/Feedback.aspx">
                 <span class="left_footer_item">
                     Feedback
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerHelpLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerHelpLink" runat="server" NavigateUrl="~/AboutUs/Help.aspx">
                 <span class="middle_footer_item">
                     Help
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerTermsLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerTermsLink" runat="server" NavigateUrl="~/AboutUs/TermsAndConditions.aspx">
                 <span class="right_footer_item">
                     Terms and Conditions
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerPrivacyLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerPrivacyLink" runat="server" NavigateUrl="~/AboutUs/PrivacyPolicy.aspx">
                 <span class="right_footer_item">
                     Privacy Policy
                 </span>
