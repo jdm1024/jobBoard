@@ -2,9 +2,9 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">      
     <div class="left_panel">
-    
+     
     <link href="../Styles/JobSeeker.css" rel="stylesheet" type="text/css" />
    
    
@@ -55,7 +55,7 @@
                        <asp:TableRow>
                           <asp:TableCell CssClass="TableCell">Current State </asp:TableCell>
                           <asp:TableCell CssClass="TableCell">
-                              <asp:DropDownList ID="currentState" runat="server"  DataValueField="Id" DataTextField="longName" DataSourceID="SqlDataSource5"  Width="100">
+                              <asp:DropDownList ID="currentState" runat="server"  DataValueField="Id" DataTextField="longName" DataSourceID="SqlDataSource5">
                    
                 </asp:DropDownList>
                           </asp:TableCell>
@@ -149,10 +149,13 @@
                  <asp:TableCell HorizontalAlign="Left">       
          <asp:Button ID="btnBack" runat="server" Text="&lt; Back" OnClick="btnBack_Click" CssClass="buttonClass" />
 		<asp:Button ID="btnNext" runat="server" Text="Next &gt;" OnClick="btnNext_Click" ViewStateMode="Enabled" CssClass="buttonClass" />	
-		<asp:Button ID="btnSend" runat="server" Text="Save" onClick="btnSend_Click"  CssClass="buttonClass"/>
+		<asp:Button ID="btnSend" runat="server" Text="Save" onClick="btnSend_Click"   CssClass="buttonClass"/>
                      </asp:TableCell>
                  </asp:TableRow>
+             <asp:TableRow><asp:TableCell ColumnSpan="2">
+                 <asp:Label ID="message" runat="server" Text=""></asp:Label>
 
+                            </asp:TableCell></asp:TableRow>
              </asp:Table>
        
            </div>
@@ -183,7 +186,6 @@
         <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Jobseeker/JobSeekerResume.aspx">My Resume</asp:HyperLink>
      </a>
     </div>
-
 </asp:Content>
 
 

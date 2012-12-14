@@ -7,17 +7,25 @@ using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
 using System.Configuration;
-
+using System.Web.Security;
 public partial class JobSeeker : System.Web.UI.Page
 {
     private static Boolean jobSeekerExists = false;
     protected void Page_Load(object sender, EventArgs e)
     {
+
+
         if (!((Page)System.Web.HttpContext.Current.CurrentHandler).IsPostBack)
         {
-           
+            string loggedinuser = null;
+            MembershipUser membershipUser = Membership.GetUser();
+            if (membershipUser != null)
+            {
+                loggedinuser = Membership.GetUser().ToString();
+            }
+            userId.Value = loggedinuser;
             bind();
-            Session["userId"] = userId.Value;
+           
            
         }
 
@@ -27,6 +35,7 @@ public partial class JobSeeker : System.Web.UI.Page
     protected void btnBack_Click(object sender, EventArgs e)
     {
         MultiView1.ActiveViewIndex--;
+        message.Text = "";
     }
 
     protected void btnNext_Click(object sender, EventArgs e)
@@ -76,6 +85,7 @@ public partial class JobSeeker : System.Web.UI.Page
 
             saveJobSeekerSkills();
 
+            message.Text = "Your details have been saved successfully";
         }
         catch (Exception ex)
         {
@@ -133,7 +143,8 @@ public partial class JobSeeker : System.Web.UI.Page
                 lastName.Text = myReader.GetString(2).Trim();
                 email.Text = myReader.GetString(3).Trim();
                 currentAddress.Text = myReader.GetString(4).Trim();
-               // currentState.SelectedValue = myReader.GetInt32(5) + "";
+                currentState.SelectedValue = myReader.GetString(5).Trim();
+              //  int stateId = (int)myReader["currentState"];
                 zipCode.Text = myReader.GetString(6).Trim();
                 phone.Text = myReader.GetString(7).Trim();
                 nationality.Text = myReader.GetString(8).Trim();
@@ -490,6 +501,8 @@ public partial class JobSeeker : System.Web.UI.Page
                 errorMessage.Text = errorMessage.Text + "E-mail";
             }
         }
+        if (!isError)
+            errorMessage.Text = "";
         return isError;
         
       
