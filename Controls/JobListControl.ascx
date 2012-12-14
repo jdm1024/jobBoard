@@ -25,7 +25,7 @@
             <asp:Label ID="canApplyOnlineLabel" runat="server" Text='<%# Eval("state") + " (" + Eval("applyDetails") + ")" %>' />
             <br />
             <div class="job_item_link_area">
-                <asp:Button ID="viewJobButton" runat="server" Text="View Job" CausesValidation="False" PostBackUrl='<%#"~/EmployerPage/Edit jobs.aspx?jobId="+Eval("jobId")%>' CssClass="job_item_link" />
+                <asp:Button ID="viewJobButton" runat="server" Text="View Job" CausesValidation="False" PostBackUrl='<%#"~/EmployerPage/view my jobs.aspx?jobId="+Eval("jobId")%>' CssClass="job_item_link" />
             </div>
         </div>
     </ItemTemplate>
