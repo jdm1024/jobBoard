@@ -13,20 +13,29 @@ public partial class JobSeeker : System.Web.UI.Page
     private static Boolean jobSeekerExists = false;
     protected void Page_Load(object sender, EventArgs e)
     {
-
-
-        if (!((Page)System.Web.HttpContext.Current.CurrentHandler).IsPostBack)
+        string loggedinuser = null;
+        MembershipUser membershipUser = Membership.GetUser();
+        if (membershipUser != null)
         {
-            string loggedinuser = null;
-            MembershipUser membershipUser = Membership.GetUser();
-            if (membershipUser != null)
+            loggedinuser = Membership.GetUser().ToString();
+        }
+        userId.Value = loggedinuser;
+
+        if (loggedinuser == null || "".Equals(loggedinuser))
+        {
+            Response.Redirect("../Login.aspx");
+        }
+
+        else
+        {
+
+            if (!((Page)System.Web.HttpContext.Current.CurrentHandler).IsPostBack)
             {
-                loggedinuser = Membership.GetUser().ToString();
+
+                bind();
+
+
             }
-            userId.Value = loggedinuser;
-            bind();
-           
-           
         }
 
         
