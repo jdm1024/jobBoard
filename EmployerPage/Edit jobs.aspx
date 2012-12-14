@@ -14,9 +14,7 @@
             <asp:TableCell HorizontalAlign="Left">
                 <asp:TextBox ID="txtJobId" width="205px" runat="server"></asp:TextBox>      
             </asp:TableCell>
-           <asp:TableCell HorizontalAlign="Left">
-                <asp:Button  id="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click"/>     
-            </asp:TableCell>
+           
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">

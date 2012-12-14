@@ -102,7 +102,8 @@ public partial class view_my_jobs : System.Web.UI.Page
     
     protected void btnEdit_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Edit jobs.aspx");
+        //Convert.ToInt32(Request.QueryString["jobId"])
+        Response.Redirect("Edit jobs.aspx?jobId="+Request.QueryString["jobId"]);
     }
     protected void btnDelete_Click(object sender, EventArgs e)
     {

@@ -12,6 +12,7 @@ public partial class Edit_jobs : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+
         if (!IsPostBack)
         {
             SqlConnection MyConnection;
@@ -63,16 +64,17 @@ public partial class Edit_jobs : System.Web.UI.Page
             ddJobtype.DataSource = MyTable.DefaultView;
             ddJobtype.DataValueField = "Id";
             ddJobtype.DataTextField = "Jobtype";
-            ddJobtype.DataBind();              
+            ddJobtype.DataBind();
 
             MyAdapter.Dispose();
             MyCommand.Dispose();
             MyConnection.Dispose();
         }
-    }
-    protected void btnRetrieve_Click(object sender, EventArgs e)
-    {
-        bind1();
+       
+        {
+            txtJobId.Text = Request.QueryString["jobId"];
+            bind1();
+        }
     }
     protected void btnUpdate_Click(object sender, EventArgs e)
     {
