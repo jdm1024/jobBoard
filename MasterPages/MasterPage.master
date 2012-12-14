@@ -61,12 +61,12 @@
                     Home
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerEmployersLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerEmployersLink" runat="server" NavigateUrl="~/EmployerPage/Employer.aspx">
                 <span class="left_footer_item">
                     Employers
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerSeekersLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerSeekersLink" runat="server" NavigateUrl="~/Jobseeker/JobSeeker.aspx">
                 <span class="middle_footer_item">
                     Job Seekers
                 </span>

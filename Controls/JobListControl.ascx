@@ -21,9 +21,6 @@
             <asp:Label ID="Label7" runat="server" Text="How to Apply:" CssClass="job_item_label"></asp:Label>
             <asp:Label ID="canApplyOnlineLabel" runat="server" Text='<%# Eval("applyDetails") %>' />
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Post expires:" CssClass="job_item_label"></asp:Label>
-            <asp:Label ID="expirationDateLabel" runat="server" Text='<%# Eval("expirationDate") %>' />
-            <br />
             <asp:Label ID="Label5" runat="server" Text="State:" CssClass="job_item_label"></asp:Label>
             <asp:Label ID="longNameLabel" runat="server" Text='<%# Eval("state") %>' />
             <br />
