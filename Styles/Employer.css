@@ -1,0 +1,15 @@
+﻿div.tablecell{
+text-align:left;
+font-size:16px;
+font-style:normal;
+
+}
+div.textbox{
+    margin:0px;
+    padding:0px;
+    width:250px;
+}
+div.dropdown{
+width:250px;
+}
+

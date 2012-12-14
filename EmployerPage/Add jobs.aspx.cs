@@ -31,7 +31,7 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
             sqlCmd.Connection = sqlConn;
 
             //sqlCmd.CommandText = "Insert into Jobs (description, title, responsibilities, canApplyOnline, expirationDate, stateId, jobType) values ('" + txtJobDescription.Text + "','" + txtJobtitle.Text + "','" + txtResponsibilities.Text + "','" + rblHowToApply.Text + "','" + txtStartDate.Text + "',)";
-            sqlCmd.CommandText = "Insert into Jobs (description, title, responsibilities, canApplyOnline, expirationDate, stateId, jobType) values ('" + txtJobDescription.Text + "','" + txtJobtitle.Text + "','" + txtResponsibilities.Text + "','" + rblHowToApply.Text + "','" + txtStartDate.Text + "' , " + ddlocation.SelectedValue + ", " + ddJobtype.SelectedValue + ")";
+            sqlCmd.CommandText = "Insert into Jobs (description, title, responsibilities, applicationMethodId, expirationDate, stateId, jobType, employerId) values ('" + txtJobDescription.Text + "','" + txtJobtitle.Text + "','" + txtResponsibilities.Text + "','" + rblHowToApply.SelectedValue + "','" + txtStartDate.Text + "' , " + ddlocation.SelectedValue + ", " + ddJobtype.SelectedValue + ", " + ddEmpid.SelectedValue + ")";
             sqlCmd.ExecuteNonQuery();
 
          }
@@ -105,6 +105,21 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
         ddJobtype.DataTextField = "Jobtype";
         ddJobtype.DataBind();
 
+        MyCommand.CommandText = "SELECT * FROM Employer";
+        MyCommand.CommandType = CommandType.Text;
+        MyCommand.Connection = MyConnection;
+
+        MyTable = new DataTable();
+        MyAdapter = new SqlDataAdapter();
+        MyAdapter.SelectCommand = MyCommand;
+        MyAdapter.Fill(MyTable);
+
+        ddEmpid.DataSource = MyTable.DefaultView;
+        ddEmpid.DataValueField = "Id";
+        ddEmpid.DataTextField = "companyName";
+        ddEmpid.DataBind();
+
+        
         MyAdapter.Dispose();
         MyCommand.Dispose();
         MyConnection.Dispose();  

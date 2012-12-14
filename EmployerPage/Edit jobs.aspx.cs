@@ -23,7 +23,7 @@ public partial class Edit_jobs : System.Web.UI.Page
             MyConnection.ConnectionString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
             MyCommand = new SqlCommand();
-            MyCommand.CommandText = "SELECT Id, KEYWORD  FROM KEYWORDS";
+            MyCommand.CommandText = "SELECT * FROM Skills";
             MyCommand.CommandType = CommandType.Text;
             MyCommand.Connection = MyConnection;
 
@@ -33,11 +33,11 @@ public partial class Edit_jobs : System.Web.UI.Page
             MyAdapter.Fill(MyTable);
 
             ddKeywords.DataSource = MyTable.DefaultView;
-            ddKeywords.DataValueField = "Id";
-            ddKeywords.DataTextField = "KEYWORD";
+            ddKeywords.DataValueField = "SkillsId";
+            ddKeywords.DataTextField = "name";
             ddKeywords.DataBind();
 
-            MyCommand.CommandText = "SELECT Id, LONGNAME  FROM STATES";
+            MyCommand.CommandText = "SELECT * FROM STATES";
             MyCommand.CommandType = CommandType.Text;
             MyCommand.Connection = MyConnection;
 
@@ -63,7 +63,7 @@ public partial class Edit_jobs : System.Web.UI.Page
             ddJobtype.DataSource = MyTable.DefaultView;
             ddJobtype.DataValueField = "Id";
             ddJobtype.DataTextField = "Jobtype";
-            ddJobtype.DataBind();
+            ddJobtype.DataBind();              
 
             MyAdapter.Dispose();
             MyCommand.Dispose();
@@ -105,6 +105,7 @@ public partial class Edit_jobs : System.Web.UI.Page
         ddlocation.SelectedValue = MyTable.Rows[0]["stateId"].ToString();
         ddJobtype.SelectedValue = MyTable.Rows[0]["jobType"].ToString();                  
         txtJobDescription.Text = MyTable.Rows[0]["description"].ToString();
+     
 
         MyAdapter.Dispose();
         MyCommand.Dispose();

@@ -3,16 +3,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-         <div class="left_panel">   
-             <asp:Label ID="Label1" runat="server" Text="EDIT JOB POSTING" > </asp:Label>  
-             <br/>      
-    <asp:Table ID="Table1" runat="server">                            
-       <asp:TableRow>
+         <div class="left_panel">             
+              <link href="../Styles/Employer.css" rel="stylesheet" type="text/css" />             
+            <asp:Label ID="Label1" runat="server" Text="Edit job postings" > </asp:Label>
+    <asp:Table ID="Table1" runat="server">
+         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">
                 Enter job Id
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox ID="txtJobId" runat="server"></asp:TextBox>      
+                <asp:TextBox ID="txtJobId" width="205px" runat="server"></asp:TextBox>      
             </asp:TableCell>
            <asp:TableCell HorizontalAlign="Left">
                 <asp:Button  id="btnRetrieve" runat="server" Text="Retrieve" OnClick="btnRetrieve_Click"/>     
@@ -23,7 +23,7 @@
                 Job Title
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox ID="txtJobtitle" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtJobtitle" width="205px" runat="server"></asp:TextBox>
                 
             </asp:TableCell>
         </asp:TableRow>
@@ -32,28 +32,19 @@
                 Roles / Responsibilities
             </asp:TableCell >
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox id="txtResponsibilities" rows="2" width="150px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                <asp:TextBox id="txtResponsibilities" rows="2" width="205px" TextMode="MultiLine" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">
-                How to apply
-            </asp:TableCell>
-            <asp:TableCell HorizontalAlign="Left">
-                <asp:RadioButtonList id="rblHowToApply"  runat="server"  >
-                              <asp:ListItem Text="Email" Value="0" Selected="true" />
-                              <asp:ListItem Text="Mail" Value="1" />
-                    </asp:RadioButtonList>
-            </asp:TableCell>
-        </asp:TableRow>
-        <asp:TableRow>
-            <asp:TableCell HorizontalAlign="Left">
-               Expiration date
+               Expiration Date
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
                    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">  
-    </asp:ToolkitScriptManager>        
-    <asp:TextBox ID="txtStartDate" runat="server"></asp:TextBox>        
+    </asp:ToolkitScriptManager>  
+      
+    <asp:TextBox ID="txtStartDate" width="205px" runat="server"></asp:TextBox>  
+      
     <asp:CalendarExtender   
         ID="CalendarExtender1"   
         TargetControlID="txtStartDate"   
@@ -65,7 +56,7 @@
                 Location
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="ddlocation" runat="server">
+                <asp:DropDownList width="210px" ID="ddlocation" runat="server">
                    
                 </asp:DropDownList>
                 
@@ -76,17 +67,17 @@
                 Keywords
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="ddKeywords" runat="server">
+                <asp:DropDownList width="210px" ID="ddKeywords" runat="server">
                    
                 </asp:DropDownList>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">
-                Job type
+                Job Type
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:DropDownList ID="ddJobtype" runat="server">
+                <asp:DropDownList width="210px" ID="ddJobtype" runat="server">
                    
                 </asp:DropDownList>
                 
@@ -97,15 +88,16 @@
                 Job Description
             </asp:TableCell>
             <asp:TableCell HorizontalAlign="Left">
-                <asp:TextBox id="txtJobDescription" rows="2" width="150px" TextMode="MultiLine" runat="server"></asp:TextBox>
+                <asp:TextBox id="txtJobDescription" width="205px" rows="2" TextMode="MultiLine" runat="server"></asp:TextBox>
             </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow >
             <asp:TableCell HorizontalAlign="Left">
-                <asp:Button  id="btnUpdate" runat="server" Text="UPDATE" OnClick="btnUpdate_Click"/>
+                <asp:Button  id="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"/>
             </asp:TableCell>
             </asp:TableRow>
-    </asp:Table>              
+    </asp:Table>
+
 </div>
 <div class="right_panel">
        <a>
@@ -118,6 +110,6 @@
         <asp:GridView ID="GridView1" runat="server"></asp:GridView>  
        </a>
     </div>
-            
+        
 </asp:Content>
 
