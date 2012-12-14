@@ -7,14 +7,33 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Web.Security;
 public partial class view_my_jobs : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
+        string loggedinuser = null;
+        MembershipUser membershipUser = Membership.GetUser();
+        if (membershipUser != null)
         {
-            bindview();
+            loggedinuser = Membership.GetUser().ToString();
+        }
+        string jobId = Request.QueryString["jobId"];
+
+        if (loggedinuser == null || "".Equals(loggedinuser) )
+        {
+            Response.Redirect("../Login.aspx");
+        }
+        else if(jobId == null || jobId.Length == 0)
+        {
+            Response.Redirect("../Default.aspx");
+        }
+        else
+        {
+            if (!IsPostBack)
+            {
+                bindview();
+            }
         }
     }
     public void bindview()
