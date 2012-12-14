@@ -27,6 +27,10 @@
                                 <asp:TextBox ID="UserName" runat="server"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required." ToolTip="User Name is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
                             </td>
+
+                             <td align="center" colspan="2" style="color:Red;" class="auto-style1">
+                                <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
+                            </td>
                         </tr>
                         <tr>
                             <td align="right">
@@ -44,6 +48,9 @@
                             <td>
                                 <asp:TextBox ID="ConfirmPassword" runat="server" TextMode="Password"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="ConfirmPasswordRequired" runat="server" ControlToValidate="ConfirmPassword" ErrorMessage="Confirm Password is required." ToolTip="Confirm Password is required." ValidationGroup="CreateUserWizard1">*</asp:RequiredFieldValidator>
+                            </td>
+                               <td align="center" colspan="2" style="color:Red;" class="auto-style1">
+                                <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
                             </td>
                         </tr>
                         <tr>
@@ -78,7 +85,7 @@
                                 <asp:Label ID="Label1" runat="server" AssociatedControlID="Answer">User Type</asp:Label>
                             </td>
                             <td align="left">
-                                <asp:DropDownList ID="userType" runat="server" >
+                                <asp:DropDownList ID="userType" runat="server"  OnSelectedIndexChanged="userType_SelectedIndexChanged" AutoPostBack="true">
 
                                     <asp:ListItem Value="1" Text="Employer"></asp:ListItem>
                                     <asp:ListItem Value="2" Text="Job Seeker"></asp:ListItem>
@@ -92,7 +99,7 @@
                             <td align="right">
                                 <asp:Label ID="Label2" runat="server">Company Name</asp:Label>
                             </td>
-                            <td  align="left">
+                            <td align="left" >
                                 <asp:TextBox ID="companyName" runat="server"></asp:TextBox>
                             </td>
                         </tr>
@@ -119,22 +126,21 @@
                             <td align="right">
                                 <asp:Label ID="Label5" runat="server">Website</asp:Label>
                             </td>
-                            <td  align="left">
+                            <td align="left">
                                 <asp:TextBox ID="website" runat="server"></asp:TextBox>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" colspan="2">
-                                <asp:CompareValidator ID="PasswordCompare" runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword" Display="Dynamic" ErrorMessage="The Password and Confirmation Password must match." ValidationGroup="CreateUserWizard1"></asp:CompareValidator>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="center" colspan="2" style="color:Red;" class="auto-style1">
-                                <asp:Literal ID="ErrorMessage" runat="server" EnableViewState="False"></asp:Literal>
                             </td>
                         </tr>
                     </table>
                 </ContentTemplate>
+                <CustomNavigationTemplate>
+                    <table border="0" cellspacing="5" style="width:100%;height:100%;">
+                        <tr align="left">
+                            <td align="left" colspan="2">
+                                <asp:Button ID="StepNextButton" runat="server" CommandName="MoveNext" Text="Create User" ValidationGroup="CreateUserWizard1" />
+                            </td>
+                        </tr>
+                    </table>
+                </CustomNavigationTemplate>
             </asp:CreateUserWizardStep>
               
             <asp:CompleteWizardStep runat="server" />
