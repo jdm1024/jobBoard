@@ -28,12 +28,13 @@
             <asp:TableCell HorizontalAlign="Left">
                 How to apply
             </asp:TableCell>
+            
+            
             <asp:TableCell HorizontalAlign="Left">
-                <asp:RadioButtonList id="rblHowToApply"  runat="server"  >
-                              <asp:ListItem Text="Email" Value="0" Selected="true" />
-                              <asp:ListItem Text="Mail" Value="1" />
-                    </asp:RadioButtonList>
-            </asp:TableCell>
+                <asp:DropDownList ID="rblHowToApply" width="210px" runat="server">
+                   
+                </asp:DropDownList>
+                </asp:TableCell>
         </asp:TableRow>
         <asp:TableRow>
             <asp:TableCell HorizontalAlign="Left">

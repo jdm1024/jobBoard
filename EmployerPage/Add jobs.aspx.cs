@@ -32,6 +32,19 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
 
             //sqlCmd.CommandText = "Insert into Jobs (description, title, responsibilities, canApplyOnline, expirationDate, stateId, jobType) values ('" + txtJobDescription.Text + "','" + txtJobtitle.Text + "','" + txtResponsibilities.Text + "','" + rblHowToApply.Text + "','" + txtStartDate.Text + "',)";
             sqlCmd.CommandText = "Insert into Jobs (description, title, responsibilities, applicationMethodId, expirationDate, stateId, jobType, employerId) values ('" + txtJobDescription.Text + "','" + txtJobtitle.Text + "','" + txtResponsibilities.Text + "','" + rblHowToApply.SelectedValue + "','" + txtStartDate.Text + "' , " + ddlocation.SelectedValue + ", " + ddJobtype.SelectedValue + ", " + ddEmpid.SelectedValue + ")";
+            
+            sqlCmd.ExecuteNonQuery();
+
+            sqlCmd.CommandText = "Select max(Id) from jobs";
+
+             //  employerId = Convert.ToInt32(sqlCmd.ExecuteScalar());
+              //  employerId = Int32.Parse(sqlCmd.ExecuteScalar());
+                string result = sqlCmd.ExecuteScalar().ToString();
+                int jobId = Int32.Parse(result);
+ 
+
+            sqlCmd.CommandText = "Insert into Jobs_Skills (jobId, skillsId) values (" + jobId + ", " + ddKeywords.SelectedValue + ")";
+
             sqlCmd.ExecuteNonQuery();
 
          }
@@ -77,6 +90,10 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
         ddKeywords.DataTextField = "name";
         ddKeywords.DataBind();
 
+        ddKeywords.SelectedValue = "1";
+    //    ddKeywords.Items.Add(new Item("--select--",""))
+       //     ddKeywords.Items.Insert(0, new ListItem());
+
         MyCommand.CommandText = "SELECT Id, LONGNAME  FROM STATES";
         MyCommand.CommandType = CommandType.Text;
         MyCommand.Connection = MyConnection;
@@ -118,6 +135,20 @@ public partial class ADD_EDIT_JOB_POSTINGS : System.Web.UI.Page
         ddEmpid.DataValueField = "Id";
         ddEmpid.DataTextField = "companyName";
         ddEmpid.DataBind();
+
+        MyCommand.CommandText = "SELECT * FROM ApplicationMethod";
+        MyCommand.CommandType = CommandType.Text;
+        MyCommand.Connection = MyConnection;
+
+        MyTable = new DataTable();
+        MyAdapter = new SqlDataAdapter();
+        MyAdapter.SelectCommand = MyCommand;
+        MyAdapter.Fill(MyTable);     
+
+        rblHowToApply.DataSource = MyTable.DefaultView;
+        rblHowToApply.DataValueField = "Id";
+        rblHowToApply.DataTextField = "method";
+        rblHowToApply.DataBind();
 
         
         MyAdapter.Dispose();

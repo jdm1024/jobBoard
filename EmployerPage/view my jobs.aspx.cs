@@ -95,7 +95,13 @@ public partial class view_my_jobs : System.Web.UI.Page
 
             SqlCommand sqlCmd = new SqlCommand();
             sqlCmd.Connection = sqlConn;
+            sqlCmd.CommandText = "DELETE FROM Jobs_Skills WHERE jobId=" + Convert.ToInt32(Request.QueryString["jobId"]);
+
+            sqlCmd.ExecuteNonQuery();
+
+            sqlCmd.Connection = sqlConn;
             sqlCmd.CommandText = "DELETE FROM Jobs WHERE Id=" + Convert.ToInt32(Request.QueryString["jobId"]);
+
             sqlCmd.ExecuteNonQuery();
 
         }
