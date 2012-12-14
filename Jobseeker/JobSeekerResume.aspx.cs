@@ -69,7 +69,7 @@ public partial class JobSeekerResume : System.Web.UI.Page
             try
             {
                 
-                fileName = "D:\\RESUME\\" + FileUpload1.FileName; ;
+                fileName = "E:\\Web Programming Language\\Resume Repository\\" + FileUpload1.FileName; ;
                 FileUpload1.SaveAs(fileName);
                
                 Label1.Text = "Your resume has been saved Successfully";
