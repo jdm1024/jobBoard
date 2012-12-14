@@ -12,6 +12,7 @@ public partial class Controls_FilterControl : System.Web.UI.UserControl
         jobListDataSource.SelectCommand =
             "SELECT Jobs.description," +
             "Jobs.Id AS jobId," +
+            "Employer.companyName AS employer," +
             "Jobs.title," +
             "Jobs.responsibilities," +
             "Jobs.expirationDate," +
