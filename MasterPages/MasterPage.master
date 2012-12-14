@@ -71,12 +71,12 @@
                     Job Seekers
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerAccountLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerAccountLink" runat="server" NavigateUrl="~/SignUp.aspx">
                 <span class="right_footer_item">
                     New Account
                 </span>
             </asp:HyperLink>
-            <asp:HyperLink ID="footerLoginLink" runat="server" NavigateUrl="~/Default.aspx">
+            <asp:HyperLink ID="footerLoginLink" runat="server" NavigateUrl="~/Login.aspx">
                 <span class="right_footer_item">
                     Log In
                 </span>
