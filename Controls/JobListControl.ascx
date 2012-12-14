@@ -12,6 +12,9 @@
             <asp:Label ID="titleLabel" runat="server" Text='<%# Eval("title") %>' />
             </span>
             <br />
+            <asp:Label ID="Label1" runat="server" Text="Desired Skills:" CssClass="job_item_label"></asp:Label>
+            <asp:Label ID="Label8" runat="server" Text='<%# Eval("skillNames") %>' />
+            <br />
             <asp:Label ID="Label3" runat="server" Text="Responsibilities:" CssClass="job_item_label"></asp:Label>
             <asp:Label ID="responsibilitiesLabel" runat="server" Text='<%# Eval("responsibilities") %>' />
             <br />
@@ -28,7 +31,7 @@
             <asp:Label ID="jobTypeLabel" runat="server" Text='<%# Eval("jobType") %>' />
             <br />
             <div class="job_item_link_area">
-                <asp:Button ID="viewJobButton" runat="server" Text="View Job"  CausesValidation="False" PostBackUrl='<%#"~/EmployerPage/Edit jobs.aspx?jobId="+Eval("jobId")%>' CssClass="job_item_link" />
+                <asp:Button ID="viewJobButton" runat="server" Text="View Job" CausesValidation="False" PostBackUrl='<%#"~/EmployerPage/Edit jobs.aspx?jobId="+Eval("jobId")%>' CssClass="job_item_link" />
             </div>
         </div>
     </ItemTemplate>
@@ -47,5 +50,3 @@
         </div>
     </LayoutTemplate>
 </asp:ListView>
-
-
